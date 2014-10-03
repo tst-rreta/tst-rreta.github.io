@@ -13,7 +13,7 @@
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 	<script>
 
-		var map = L.map('map').setView([51.505, -0.09], 13);
+		var map = L.map('map').setView([32.7758, -96.7967], 13);
 
 		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 			maxZoom: 18,
@@ -23,24 +23,8 @@
 			id: 'examples.map-i875mjb7'
 		}).addTo(map);
 
-
-		L.marker([51.5, -0.09]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-		L.circle([51.508, -0.11], 500, {
-			color: 'red',
-			fillColor: '#f03',
-			fillOpacity: 0.5
-		}).addTo(map).bindPopup("I am a circle.");
-
-		L.polygon([
-			[51.509, -0.08],
-			[51.503, -0.06],
-			[51.51, -0.047]
-		]).addTo(map).bindPopup("I am a polygon.");
-
-
-		var popup = L.popup();
+		L.tileLayer('http://localhost:8080/xtree-webserver/rest/gheat/tile/7500fe3c-73db-4ec5-a1fd-bbd52845246d/{z}/{x}/{y}', {
+		}).addTo(map);
 
 		function onMapClick(e) {
 			popup
